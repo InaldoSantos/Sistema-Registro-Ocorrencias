@@ -1,5 +1,18 @@
 #include <stdio.h>
 
+struct Ocorrencia {
+    int codigo;
+    char titulo[100];
+    char descricao[300];
+    char local[100];
+    char status[20];
+} Ocorrencia;
+
+void registrarOcorrencia();
+void listarOcorrencias();
+void consultarOcorrencia();
+
+
 int main() {
 
     int opcao;
@@ -20,15 +33,15 @@ int main() {
         switch(opcao) {
 
             case 1:
-                printf("\nRegistrar ocorrencia\n");
+                registrarOcorrencia();
                 break;
 
             case 2:
-                printf("\nListar ocorrencias\n");
+                listarOcorrencias();
                 break;
 
             case 3:
-                printf("\nConsultar ocorrencia\n");
+                consultarOcorrencia();
                 break;
 
             case 4:
@@ -56,7 +69,11 @@ int main() {
     return 0;
 }
 
-void registrarOcorrencia() {
+void registrarOcorrencia(Ocorrencia ocorrencias[], int tamanho) {
 	// Implementar a lógica para registrar uma ocorrência
 	printf("\nRegistrar ocorrencia\n");
+}
+
+void listarOcorrencias() {
+    printf("\nListar ocorrencias\n");
 }
