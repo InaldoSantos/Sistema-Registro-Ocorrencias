@@ -1,6 +1,10 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-struct Ocorrencia {
+#define MAX_OCORRENCIAS 100
+
+typedef struct Ocorrencia {
     int codigo;
     char titulo[100];
     char descricao[300];
@@ -8,12 +12,14 @@ struct Ocorrencia {
     char status[20];
 } Ocorrencia;
 
-void registrarOcorrencia();
+void registrarOcorrencia(Ocorrencia **ocorrencias, int * quantidade);
 void listarOcorrencias();
 void consultarOcorrencia();
 
 
 int main() {
+    Ocorrencia *ocorrencias = NULL;
+    int quantidade = 0;
 
     int opcao;
 
@@ -33,7 +39,7 @@ int main() {
         switch(opcao) {
 
             case 1:
-                registrarOcorrencia();
+                registrarOcorrencia(&ocorrencias, &quantidade);
                 break;
 
             case 2:
@@ -66,14 +72,29 @@ int main() {
 
     } while(opcao != 0);
 
+    free(ocorrencias);
+
     return 0;
 }
 
-void registrarOcorrencia(Ocorrencia ocorrencias[], int tamanho) {
-	// Implementar a lógica para registrar uma ocorrência
-	printf("\nRegistrar ocorrencia\n");
+void registrarOcorrencia(Ocorrencia **ocorrencias, int *quantidade) {
+
+    Ocorrencia *temporario;
+
+    temporario = realloc(*ocorrencias, (*quantidade + 1) * sizeof(Ocorrencia));
+
+    if (temporario == NULL) {
+        printf("\nErro ao alocar memoria!\n");
+        return;
+    }
+
+    *ocorrencias = temporario;
+
+    printf("\nMemoria alocada com sucesso!\n");
+
+    (*quantidade)++;
 }
 
 void listarOcorrencias() {
-    printf("\nListar ocorrencias\n");
+        
 }
