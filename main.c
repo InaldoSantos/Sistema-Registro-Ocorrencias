@@ -14,11 +14,11 @@ typedef struct Ocorrencia
 } Ocorrencia;
 
 void registrarOcorrencia(Ocorrencia **ocorrencias, int *quantidade);
-void listarOcorrencias(Ocorrencia *ocorrencias, int quantidade)
-void consultarOcorrencia();
-void alterarOcorrencia();
-void excluirOcorrencia();
-void alterarStatus();
+void listarOcorrencias(Ocorrencia *ocorrencias, int quantidade);
+//void consultarOcorrencia();
+//void alterarOcorrencia();
+//void excluirOcorrencia();
+//void alterarStatus();
 
 int main()
 {
@@ -56,7 +56,7 @@ int main()
             break;
 
         case 3:
-            consultarOcorrencia();
+            printf("\nConsultar ocorrencia\n");
             break;
 
         case 4:
