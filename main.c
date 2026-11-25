@@ -14,7 +14,7 @@ typedef struct Ocorrencia
 } Ocorrencia;
 
 void registrarOcorrencia(Ocorrencia **ocorrencias, int *quantidade);
-void listarOcorrencias();
+void listarOcorrencias(Ocorrencia *ocorrencias, int quantidade)
 void consultarOcorrencia();
 void alterarOcorrencia();
 void excluirOcorrencia();
@@ -52,7 +52,7 @@ int main()
             break;
 
         case 2:
-            listarOcorrencias();
+            listarOcorrencias(ocorrencias, quantidade);
             break;
 
         case 3:
@@ -130,6 +130,6 @@ void registrarOcorrencia(Ocorrencia **ocorrencias, int *quantidade)
     printf("\nOcorrencia registrada! Codigo: %d\n", nova->codigo);
 }
 
-void listarOcorrencias()
-{
+void listarOcorrencias(Ocorrencia ocorrencias[], int quantidade) {
+
 }
